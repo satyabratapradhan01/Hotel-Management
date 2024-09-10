@@ -30,7 +30,7 @@ try {
 	Class.forName("com.mysql.cj.jdbc.Driver");
 	Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/hotel_management", "root", "1234");
 	
-	PreparedStatement ps = con.prepareStatement("select * from customer where email=? and password=?");
+	PreparedStatement ps = con.prepareStatement("select * from customer where username=? and password=?");
 	ps.setString(1, myusername);
 	ps.setString(2, mypass);
 	
@@ -38,7 +38,7 @@ try {
 	
 	if(rs.next()) {
 		HttpSession session = req.getSession();
-		session.setAttribute("session_name", rs.getString("name"));
+//		session.setAttribute("session_name", rs.getString("name"));
 		RequestDispatcher rd = req.getRequestDispatcher("/profile.jsp");
 		rd.include(req, resp);
 	}else {

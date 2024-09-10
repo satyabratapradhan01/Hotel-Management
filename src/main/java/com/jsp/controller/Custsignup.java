@@ -33,12 +33,12 @@ public class Custsignup extends HttpServlet {
             con = DriverManager.getConnection("jdbc:mysql://localhost:3306/hotel_management", "root", "1234");
 
             ps = con.prepareStatement("insert into customer(coutomer_aadhar_num, coutomer_name, coutomer_phnone_num, email, password, username) values(?,?,?,?,?,?)");
-            ps.setString(1, myName);
-            ps.setString(2, myEmail);
+            ps.setString(1, myAdhaar);
+            ps.setString(2, myName);
             ps.setString(3, myphoneNo);
-            ps.setString(4, myAdhaar);
-            ps.setString(5, myUsername);
-            ps.setString(6, myPassword);
+            ps.setString(4, myEmail);
+            ps.setString(5, myPassword);
+            ps.setString(6, myUsername);
 
             int count = ps.executeUpdate();
             resp.setContentType("text/html");
