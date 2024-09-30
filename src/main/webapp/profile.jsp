@@ -188,6 +188,7 @@ margin-bottom: 3%;
 </style>
 </head>
 <body>
+<form action="BookingServlet" method="post">
 	<nav class="navbar navbar-expand-lg navbar-light bg-light">
 		<a class="navbar-brand" href="#">Taj-Hotel</a>
 		<button class="navbar-toggler" type="button" data-toggle="collapse"
@@ -223,8 +224,10 @@ margin-bottom: 3%;
 					and room service</p>
 			</div>
 			<div class="card-footer">
-				<a class="btn btn-primary" href="newhome2.jsp" role="button">BOOK
-					NOW</a>
+				<form action="BookingServlet" method="post">
+                <input type="hidden" name="place" value="Nerul">
+                <input type="submit" value="BOOK NOW" class="btn btn-primary">
+            </form>
 			</div>
 		</div>
 		<div class="card">
@@ -236,8 +239,10 @@ margin-bottom: 3%;
 					and room service</p>
 			</div>
 			<div class="card-footer">
-				<a class="btn btn-primary" href="newhome2.jsp" role="button">BOOK
-					NOW</a>
+				<form action="BookingServlet" method="post">
+                <input type="hidden" name="place" value="Vashi">
+                <input type="submit" value="BOOK NOW" class="btn btn-primary">
+            </form>
 			</div>
 		</div>
 		<div class="card">
@@ -249,8 +254,12 @@ margin-bottom: 3%;
 					and room service</p>
 			</div>
 			<div class="card-footer">
-				<a class="btn btn-primary" href="newhome2.jsp" role="button">BOOK
-					NOW</a>
+			<form action="BookingServlet" method="post">
+    <input type="hidden" name="place" value="Belapur">
+    <input type="submit" value="BOOK NOW" class="btn btn-primary">
+</form>
+
+
 			</div>
 		</div>
 	</div>
@@ -348,5 +357,6 @@ margin-bottom: 3%;
 		src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js"
 		integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
 		crossorigin="anonymous"></script>
+		</form>
 </body>
 </html>

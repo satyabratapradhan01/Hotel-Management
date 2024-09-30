@@ -111,19 +111,19 @@ form label.floatLabel {
 		<h2>Log In</h2>
 
 	<center>
-								<h3>Username</h3></label><input type="text" name="username"><br>
-								<h3>Password</h3><input type="password" name="password"> <br>
-								<input type="submit" value="LOG IN" id="submit">
-							</center>
-
-		
-			<p>
-			<br>
-								<font color=white></font><font size=3px;>No Username and
-										Password? Register Here For Free! </font>
-							</p>
-							<p>
-		<button type="submit" formaction="signup.html"
+	<h3>Username</h3></label><input type="text" name="username" placeholder="Enter your user name"><br>
+	<h3>Password</h3><input type="password" name="password" placeholder="Enter your password"> <br>
+	<input type="submit" value="LOG IN" id="submit">
+	</center>
+	<p>
+	<br>
+	<font color=white></font><font size=3px;>No Username and Password? Register Here For Free! <br>
+	<% if(request.getAttribute("errorMessage") != null) { %>
+        <p style="color: red;"><%= request.getAttribute("errorMessage") %></p>
+    <% } %></font>
+	</p>
+	<p>
+	<button type="submit" formaction="signup.html"
 								class="btn btn-primary btn-block">Register Now</button>
 	</p></form>
 

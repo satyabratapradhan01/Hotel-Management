@@ -5,8 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Document</title>
-<link rel="stylesheet"
-	href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css"
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css"
 	integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
 	crossorigin="anonymous">
 <!-- <link rel="stylesheet" href="./css/style.css"> -->
@@ -180,6 +179,7 @@ background-positon-x
 </style>
 </head>
 <body>
+<form action="roomtype" method="post">
 	<nav class="navbar navbar-expand-lg navbar-light bg-light">
 		<a class="navbar-brand" href="#">book my hotel</a>
 		<button class="navbar-toggler" type="button" data-toggle="collapse"
@@ -192,7 +192,7 @@ background-positon-x
 		<div class="collapse navbar-collapse" id="navbarSupportedContent">
 			<ul class="navbar-nav mr-auto">
 				<li class="nav-item active"><a class="nav-link" href="#">Home
-						<span class="sr-only">(current)</span>
+				<span class="sr-only">(current)</span>
 				</a></li>
 				<li class="nav-item"><a class="nav-link" href="#">about</a></li>
 				<li class="nav-item dropdown"><a
@@ -208,7 +208,7 @@ background-positon-x
 				<input class="form-control mr-sm-2" type="search"
 					placeholder="Search" aria-label="Search">
 				<button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-			</form>
+			</form> 
 
 		</div>
 	</nav>
@@ -227,8 +227,12 @@ background-positon-x
 						bed is generally 4.5 feet by 6 feet.</p>
 				</div>
 				<div class="card-footer">
-					<a class="btn btn-primary" href="CustomerCheckIn2.jsp"
-						role="button">BOOK NOW</a>
+				<!--  <a class="btn btn-primary" href="checkInCheckOut.jsp"
+						role="button">BOOK NOW</a> -->
+	<form action="roomtype" method="post">
+    <input type="hidden" name="roomtype" value="Double Room">
+    <input type="submit" value="BOOK NOW" class="btn btn-primary">
+    </form>
 				</div>
 			</div>
 		</div>
@@ -244,8 +248,12 @@ background-positon-x
 						accordingly.</p>
 				</div>
 				<div class="card-footer">
-					<a class="btn btn-primary" href="CustomerCheckIn2.jsp"
-						role="button">BOOK NOW</a>
+				<form action="roomtype" method="post">
+                <input type="hidden" name="roomtype" value="Single Room">
+                <input type="submit" value="BOOK NOW" class="btn btn-primary">
+                </form>
+				<!--  	<a class="btn btn-primary" href="checkInCheckOut.jsp"
+						role="button">BOOK NOW</a> -->
 				</div>
 			</div>
 		</div>
@@ -260,7 +268,7 @@ background-positon-x
 						suitable for groups and delegates of meetings and conferences.</p>
 				</div>
 				<div class="card-footer">
-					<a class="btn btn-primary" href="CustomerCheckIn2.jsp"
+					<a class="btn btn-primary" href="checkInCheckOut.jsp"
 						role="button">BOOK NOW</a>
 				</div>
 			</div>
@@ -275,7 +283,7 @@ background-positon-x
 						and can accommodate four persons together in the same room.</p>
 				</div>
 				<div class="card-footer">
-					<a class="btn btn-primary" href="CustomerCheckIn2.jsp"
+					<a class="btn btn-primary" href="checkInCheckOut.jsp"
 						role="button">BOOK NOW</a>
 				</div>
 			</div>
@@ -340,5 +348,6 @@ background-positon-x
 		src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js"
 		integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
 		crossorigin="anonymous"></script>
+		</form>
 </body>
 </html>

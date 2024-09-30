@@ -42,10 +42,12 @@ try {
 		RequestDispatcher rd = req.getRequestDispatcher("/profile.jsp");
 		rd.include(req, resp);
 	}else {
-		out.print("<h3 style='color:red'> Email id and password didnot match</h3>");
-		
-		RequestDispatcher rd = req.getRequestDispatcher("/CustomerLogin.jsp");
-		rd.include(req, resp);
+		 req.setAttribute("errorMessage", "Incorrect user ID or password. Please try again.");
+         req.getRequestDispatcher("CustomerLogin.jsp").forward(req, resp);
+//		out.print("<h3 style='color:red'> Email id and password didnot match</h3>");
+//		
+//		RequestDispatcher rd = req.getRequestDispatcher("/CustomerLogin.jsp");
+//		rd.include(req, resp);
 	}
 }catch(Exception e) {
 	e.printStackTrace();
