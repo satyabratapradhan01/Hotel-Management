@@ -52,7 +52,7 @@
         
         <h1>Check-in Successful!</h1>
         <p>Thank you for checking in. We hope you enjoy your stay!</p>
-        <a href="#" class="button">Go to Dashboard</a>
+        <a href="dashboard.jsp" class="button">Go to Dashboard</a>
     </div>
 </body>
 </html>

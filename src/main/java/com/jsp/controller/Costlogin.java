@@ -37,8 +37,10 @@ try {
 	ResultSet rs = ps.executeQuery();
 	
 	if(rs.next()) {
-		HttpSession session = req.getSession();
-//		session.setAttribute("session_name", rs.getString("name"));
+		// Login successful, store username in session
+        HttpSession session = req.getSession();
+        session.setAttribute("username", myusername);
+		
 		RequestDispatcher rd = req.getRequestDispatcher("/profile.jsp");
 		rd.include(req, resp);
 	}else {

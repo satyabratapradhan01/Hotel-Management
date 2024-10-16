@@ -33,6 +33,8 @@ public class CheckInAndOut extends HttpServlet {
         HttpSession session = req.getSession();
         String myPlace = (String) session.getAttribute("place");
         String myRoomType = (String) session.getAttribute("roomtype");
+        String username = (String) session.getAttribute("username");
+
         
         
    
@@ -41,7 +43,7 @@ public class CheckInAndOut extends HttpServlet {
             Class.forName("com.mysql.cj.jdbc.Driver");
            Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/hotel_management", "root", "1234");
 
-           PreparedStatement ps = con.prepareStatement("INSERT INTO checkinandcheckout(Customer_Name, Email_Address, Phone_Number, ID_Proof_Type, ID_Number, Check_In_Date, Check_In_Time, Check_Out_Date, Check_Out_Time, place, room_type) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)");
+           PreparedStatement ps = con.prepareStatement("INSERT INTO checkinandcheckout(Customer_Name, Email_Address, Phone_Number, ID_Proof_Type, ID_Number, Check_In_Date, Check_In_Time, Check_Out_Date, Check_Out_Time, place, room_type, username) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)");
             ps.setString(1, myCustomerName);
             ps.setString(2, myEmailAddress);
             ps.setString(3, myPhoneNumber);
@@ -51,15 +53,16 @@ public class CheckInAndOut extends HttpServlet {
             ps.setString(7, myCheckInTime);
             ps.setString(8, myCheckOutDate);
             ps.setString(9, myCheckOutTime);
-            
             ps.setString(10, myPlace);
             ps.setString(11, myRoomType);
+            ps.setString(12, username);
+            
 
             int count = ps.executeUpdate();
             resp.setContentType("text/html");
 
             if (count > 0) {
-                RequestDispatcher rd = req.getRequestDispatcher("/checkInSuccessfully.jsp");
+                RequestDispatcher rd = req.getRequestDispatcher("/dashboard.jsp");
                 rd.include(req, resp);
             } else {
                 out.print("<h3>User not Registered due to some error</h3>");
