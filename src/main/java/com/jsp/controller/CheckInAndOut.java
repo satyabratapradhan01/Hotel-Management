@@ -62,7 +62,7 @@ public class CheckInAndOut extends HttpServlet {
             resp.setContentType("text/html");
 
             if (count > 0) {
-                RequestDispatcher rd = req.getRequestDispatcher("/dashboard.jsp");
+                RequestDispatcher rd = req.getRequestDispatcher("/checkInSuccessfully.jsp");
                 rd.include(req, resp);
             } else {
                 out.print("<h3>User not Registered due to some error</h3>");

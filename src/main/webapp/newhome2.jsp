@@ -200,15 +200,9 @@ background-positon-x
 					role="button" data-toggle="dropdown" aria-haspopup="true"
 					aria-expanded="false"> my profile</a>
 					<div class="dropdown-menu" aria-labelledby="navbarDropdown">
-						<a class="dropdown-item" href="CustomerUpdate.jsp">update</a> <a
-							class="dropdown-item" href="newhome.html">logout </a></li>
+						<a class="dropdown-item" href="newhome.html">logout </a></li>
 
-			</ul>
-			<form class="form-inline my-2 my-lg-0">
-				<input class="form-control mr-sm-2" type="search"
-					placeholder="Search" aria-label="Search">
-				<button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-			</form> 
+			</ul> 
 
 		</div>
 	</nav>
@@ -268,8 +262,13 @@ background-positon-x
 						suitable for groups and delegates of meetings and conferences.</p>
 				</div>
 				<div class="card-footer">
-					<a class="btn btn-primary" href="checkInCheckOut.jsp"
-						role="button">BOOK NOW</a>
+				
+				<form action="roomtype" method="post">
+                <input type="hidden" name="roomtype" value="Triple Room">
+                <input type="submit" value="BOOK NOW" class="btn btn-primary">
+                </form>
+				<!--  	<a class="btn btn-primary" href="checkInCheckOut.jsp"
+						role="button">BOOK NOW</a> -->
 				</div>
 			</div>
 		</div>
@@ -283,8 +282,12 @@ background-positon-x
 						and can accommodate four persons together in the same room.</p>
 				</div>
 				<div class="card-footer">
-					<a class="btn btn-primary" href="checkInCheckOut.jsp"
-						role="button">BOOK NOW</a>
+				
+				<form action="roomtype" method="post">
+                <input type="hidden" name="roomtype" value="Quad Room">
+                <input type="submit" value="BOOK NOW" class="btn btn-primary">
+                </form>
+					
 				</div>
 			</div>
 		</div>

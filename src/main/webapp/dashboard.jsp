@@ -1,101 +1,89 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
-<%@ page import="java.util.List" %>
-<%@ page import="com.jsp.controller.CheckinDetails" %> <!-- Import the CheckinDetails class -->
-
 <!DOCTYPE html>
 <html>
 <head>
     <meta charset="UTF-8">
-    <title>Dashboard</title>
+    <title>User Search</title>
     <style>
         body {
             font-family: Arial, sans-serif;
             background-color: #f0f0f0;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
         }
-        .container {
-            width: 80%;
-            margin: 0 auto;
+        nav {
+            width: 100%;
+            background-color: #1E90FF; /* Changed color to blue */
+            padding: 10px 0;
+            position: absolute;
+            top: 0;
+            display: flex;
+            justify-content: center;
+        }
+        nav a {
+            color: white;
+            padding: 14px 20px;
+            text-decoration: none;
+            text-align: center;
+            font-size: 18px;
+        }
+        nav a:hover {
+            background-color: #4682B4; /* Lighter shade of blue for hover */
+        }
+        form {
             background-color: white;
             padding: 20px;
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
             border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            width: 300px;
+            margin-top: 50px;
         }
         h2 {
             text-align: center;
             color: #333;
+            margin-bottom: 20px;
         }
-        table {
+        input[type="text"] {
             width: 100%;
-            border-collapse: collapse;
-            margin-top: 20px;
-        }
-        table th, table td {
+            padding: 10px;
+            margin: 10px 0;
             border: 1px solid #ddd;
-            padding: 8px;
-            text-align: center;
+            border-radius: 4px;
+            box-sizing: border-box;
         }
-        table th {
-            background-color: #f4f4f4;
+        input[type="submit"] {
+            width: 100%;
+            padding: 10px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
         }
-        .no-data {
-            text-align: center;
-            color: red;
+        input[type="submit"]:hover {
+            background-color: #45a049;
         }
     </style>
 </head>
 <body>
-    <header>
-        <div class="cloud"></div>
-        <div class="cloud"></div>
-    </header>
 
-    <div class="container">
-        <h2>Welcome, <%= session.getAttribute("username") %>!</h2>
+    <!-- Navigation Bar -->
+    <nav>
+        <a class="nav-link" href="newhome.html">Home
+           
+        </a>
+    </nav>
 
-        <table id="roomTable">
-            <thead>
-                <tr>
-                    <th>Customer Name</th>
-                    <th>Place</th>
-                    <th>Room Type</th>
-                    <th>Status</th>
-                    <th>Check-In Date</th>
-                    <th>Check-Out Date</th>
-                </tr>
-            </thead>
-            <tbody>
-                <% 
-                // Get the check-in list from the request attribute
-                List<CheckinDetails> checkinList = (List<CheckinDetails>) request.getAttribute("checkinList");
+    <!-- Search Form -->
+    <form action="Search" method="post">
+        <h2>User Search</h2>
+        <input type="text" name="username" placeholder="Enter your username">
+        <input type="submit" value="Search">
+    </form>
 
-                if (checkinList == null || checkinList.isEmpty()) {
-                %>
-                    <tr>
-                        <td colspan="6" class="no-data">No check-in data available for this user.</td>
-                    </tr>
-                <% 
-                } else {
-                    // Iterate over the list
-                    for (CheckinDetails checkin : checkinList) { 
-                %>
-                    <tr>
-                        <td><%= checkin.getCustomerName() %></td>
-                        <td><%= checkin.getPlace() %></td>
-                        <td><%= checkin.getRoomType() %></td>
-                        <td><%= checkin.getStatus() %></td>
-                        <td><%= checkin.getCheckInDate() %></td>
-                        <td><%= checkin.getCheckOutDate() %></td>
-                    </tr>
-                <% 
-                    } // end for
-                } // end if
-                %>
-            </tbody>
-        </table>
-    </div>
-
-    <script>
-        // You can add any JavaScript here if needed for interaction or further styling
-    </script>
 </body>
 </html>
