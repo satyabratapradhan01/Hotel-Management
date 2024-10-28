@@ -38,10 +38,10 @@ try {
 		// Login successful, store username in session
 //        HttpSession session = req.getSession();
 //        session.setAttribute("username", myusername);
-		out.print("admin page");
+//		out.print("admin page");
 		
-//		RequestDispatcher rd = req.getRequestDispatcher("/index.jsp");
-//		rd.include(req, resp);
+		RequestDispatcher rd = req.getRequestDispatcher("/adminDashboard.jsp");
+		rd.include(req, resp);
 	}else {
 		 req.setAttribute("errorMessage", "Incorrect user ID or password. Please try again.");
          req.getRequestDispatcher("CustomerLogin.jsp").forward(req, resp);
