@@ -22,7 +22,7 @@ public class Custsignup extends HttpServlet {
         String myName = req.getParameter("name");
         String myEmail = req.getParameter("Email");
         String myphoneNo = req.getParameter("phoneno");
-        String myAdhaar = req.getParameter("adhaar");
+//        String myAdhaar = req.getParameter("adhaar");
         String myUsername = req.getParameter("username");
         String myPassword = req.getParameter("password");
         Connection con = null;
@@ -32,13 +32,13 @@ public class Custsignup extends HttpServlet {
             Class.forName("com.mysql.cj.jdbc.Driver");
             con = DriverManager.getConnection("jdbc:mysql://localhost:3306/hotel_management", "root", "1234");
 
-            ps = con.prepareStatement("insert into customer(coutomer_aadhar_num, coutomer_name, coutomer_phnone_num, email, password, username) values(?,?,?,?,?,?)");
-            ps.setString(1, myAdhaar);
-            ps.setString(2, myName);
-            ps.setString(3, myphoneNo);
-            ps.setString(4, myEmail);
-            ps.setString(5, myPassword);
-            ps.setString(6, myUsername);
+            ps = con.prepareStatement("insert into customer(coutomer_name, coutomer_phnone_num, email, password, username) values(?,?,?,?,?)");
+//            ps.setString(1, myAdhaar);
+            ps.setString(1, myName);
+            ps.setString(2, myphoneNo);
+            ps.setString(3, myEmail);
+            ps.setString(4, myPassword);
+            ps.setString(5, myUsername);
 
             int count = ps.executeUpdate();
             resp.setContentType("text/html");

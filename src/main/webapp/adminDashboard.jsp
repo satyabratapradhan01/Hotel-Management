@@ -167,11 +167,13 @@
         </div>
 
         <!-- Check-in Details Button -->
+        <a href="user">
         <div class="stat-button checkin-details">
             <div class="background-dots"></div>
             <div class="stat-number"></div>
             <div class="stat-title">Check-in Details</div>
         </div>
+        </a>
     </div>
 </body>
 </html>
