@@ -1,4 +1,6 @@
-package com.jsp.admin;
+package com.jsp.customer.authentication;
+
+
 
 import java.io.IOException;
 import java.io.PrintWriter;
@@ -13,8 +15,8 @@ import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 
-@WebServlet("/editurl")
-public class CustomerEditServlet extends HttpServlet {
+@WebServlet("/Userediturl")
+public class UserEditServlet extends HttpServlet {
 
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
@@ -24,18 +26,13 @@ public class CustomerEditServlet extends HttpServlet {
         // Get parameters from the request
         int id = Integer.parseInt(req.getParameter("id"));
         String customerName = req.getParameter("CustomerName");
-        String emailAddress = req.getParameter("EmailAddress");
         String phoneNumber = req.getParameter("PhoneNumber");
-        String idProofType = req.getParameter("IDProofType");
-        String idNumber = req.getParameter("IDNumber");
-        String checkInDate = req.getParameter("CheckInDate");
-        String checkInTime = req.getParameter("CheckInTime");
-        String checkOutDate = req.getParameter("CheckOutDate");
-        String checkOutTime = req.getParameter("CheckOutTime");
-        String place = req.getParameter("Place");
-        String roomType = req.getParameter("RoomType");
+        String emailAddress = req.getParameter("EmailAddress");
+        String Password = req.getParameter("Password");
+        
+        
         String username = req.getParameter("UserName");
-        String status = req.getParameter("Status");
+        
 
         try {
             // Load MySQL driver and establish connection
@@ -43,25 +40,17 @@ public class CustomerEditServlet extends HttpServlet {
             Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/hotel_management", "root", "1234");
 
             // SQL query to update customer details
-            String query = "UPDATE checkinandcheckout SET Customer_Name = ?, Email_Address = ?, Phone_Number = ?, ID_Proof_Type = ?, ID_Number = ?, Check_In_Date = ?, Check_In_Time = ?, Check_Out_Date = ?, Check_Out_Time = ?, place = ?, room_type = ?, username = ?, status = ? WHERE SL_NO = ?";
+            String query = "UPDATE customer SET coutomer_name = ?, coutomer_phnone_num = ?, email = ?, password = ?, username = ? WHERE coutomer_id = ?";
             
             PreparedStatement ps = con.prepareStatement(query);
             
             // Set parameters for the prepared statement
             ps.setString(1, customerName);
-            ps.setString(2, emailAddress);
-            ps.setString(3, phoneNumber);
-            ps.setString(4, idProofType);
-            ps.setString(5, idNumber);
-            ps.setString(6, checkInDate);
-            ps.setString(7, checkInTime);
-            ps.setString(8, checkOutDate);
-            ps.setString(9, checkOutTime);
-            ps.setString(10, place);
-            ps.setString(11, roomType);
-            ps.setString(12, username);
-            ps.setString(13, status);
-            ps.setInt(14, id); // SL_NO
+            ps.setString(2, phoneNumber);
+            ps.setString(3, emailAddress);
+            ps.setString(4, Password);
+            ps.setString(5, username);            
+            ps.setInt(6, id); // SL_NO
 
             // Execute the update
             int count = ps.executeUpdate();
@@ -72,9 +61,9 @@ public class CustomerEditServlet extends HttpServlet {
                 pw.println("<h2>Record was not Edited Successfully</h2>");
             }
 
-            pw.println("<a href='newhome.html'>Home</a>");
+            pw.println("<a href='user'>Home</a>");
             pw.println("<br>");
-            pw.println("<a href='editeScrene'>Book List</a>");
+            pw.println("<a href='booklist'>Book List</a>");
 
             con.close();
         } catch (SQLException | ClassNotFoundException e) {
@@ -83,3 +72,4 @@ public class CustomerEditServlet extends HttpServlet {
         }
     }
 }
+

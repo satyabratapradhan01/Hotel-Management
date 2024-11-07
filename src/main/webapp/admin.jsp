@@ -128,7 +128,10 @@
         </form>
         
         <div class="forgot-password">
-            <a href="forgot-password.jsp">Forgot Password?</a>
+        <% if(request.getAttribute("errorMessage") != null) { %>
+        <p style="color: red;"><%= request.getAttribute("errorMessage") %></p>
+    <% } %></font>
+         <!--     <a href="forgot-password.jsp">Forgot Password?</a> -->
         </div>
     </div>
 </body>

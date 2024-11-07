@@ -44,7 +44,7 @@ try {
 		rd.include(req, resp);
 	}else {
 		 req.setAttribute("errorMessage", "Incorrect user ID or password. Please try again.");
-         req.getRequestDispatcher("CustomerLogin.jsp").forward(req, resp);
+         req.getRequestDispatcher("admin.jsp").forward(req, resp);
 //		out.print("<h3 style='color:red'> Email id and password didnot match</h3>");
 //		
 //		RequestDispatcher rd = req.getRequestDispatcher("/CustomerLogin.jsp");

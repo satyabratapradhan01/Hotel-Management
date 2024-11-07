@@ -18,6 +18,10 @@
             background: linear-gradient(135deg, #1a237e, #0d47a1);
             min-height: 100vh;
         }
+        
+          a {
+            text-decoration: none;
+        }
 
         .header {
             background-color: white;
@@ -157,7 +161,7 @@
             <a href="#">Home</a>
         </nav>
     </header>
-
+<a href="userRgis">
     <div class="stats-container">
         <!-- User Login Details Button -->
         <div class="stat-button login-details">
@@ -165,7 +169,7 @@
             <div class="stat-number"></div>
             <div class="stat-title">User Login Details</div>
         </div>
-
+</a>
         <!-- Check-in Details Button -->
         <a href="user">
         <div class="stat-button checkin-details">
