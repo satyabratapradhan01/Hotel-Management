@@ -33,14 +33,14 @@ public class CustomerDeleteServlete extends HttpServlet {
             int count = ps.executeUpdate();
 
             if (count == 1) {
-                pw.println("<h2>Record deleted successfully</h2>");
+                pw.println("<h2 style='color: red; text-align: center;'>Record deleted successfully</h2>");
             } else {
                 pw.println("<h2>Record deletion failed</h2>");
             }
 
             pw.println("<a href='newhome.html'>Home</a>");
             pw.println("<br>");
-            pw.println("<a href='editeScrene'>Book List</a>"); // Redirect back to list
+            pw.println("<a href='adminDashboard.jsp'>Admin Dashboard</a>"); // Redirect back to list
 
             con.close();
         } catch (SQLException | ClassNotFoundException e) {

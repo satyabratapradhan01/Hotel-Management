@@ -52,9 +52,9 @@ public class AdminEditServlet extends HttpServlet {
                 pw.println("<h2>Record was not Edited Successfully</h2>");
             }
 
-            pw.println("<a href='user'>Home</a>");
+            pw.println("<a href='newhome.html'>Home</a>");
             pw.println("<br>");
-            pw.println("<a href='booklist'>Book List</a>");
+            pw.println("<a href='ownerdashboard.jsp'>Owner Dashboard</a>");
 
             con.close();
         } catch (SQLException | ClassNotFoundException e) {

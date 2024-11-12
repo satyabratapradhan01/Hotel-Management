@@ -67,14 +67,14 @@ public class CustomerEditServlet extends HttpServlet {
             int count = ps.executeUpdate();
 
             if (count == 1) {
-                pw.println("<h2>Record is Edited Successfully</h2>");
+                pw.println("<h2 style='color: red; text-align: center;'>Record is Edited Successfully</h2>");
             } else {
                 pw.println("<h2>Record was not Edited Successfully</h2>");
             }
 
             pw.println("<a href='newhome.html'>Home</a>");
             pw.println("<br>");
-            pw.println("<a href='editeScrene'>Book List</a>");
+            pw.println("<a href='adminDashboard.jsp'>Admin Dashboard</a>");
 
             con.close();
         } catch (SQLException | ClassNotFoundException e) {

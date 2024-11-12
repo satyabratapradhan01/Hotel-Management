@@ -78,7 +78,7 @@ public class userRegistration extends HttpServlet {
 
             pw.println("</table>");
             pw.println("<div class='center'>");
-            pw.println("<a href='shop.html'>Home</a>");
+            pw.println("<a href='newhome.html'>Home</a>");
             pw.println("</div>");
 
             con.close();

@@ -13,7 +13,7 @@ import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 
-@WebServlet("/deleteScrene")
+@WebServlet("/admindeleteScrene")
 public class AdminDeleteServlet extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
@@ -26,7 +26,7 @@ public class AdminDeleteServlet extends HttpServlet {
             Class.forName("com.mysql.cj.jdbc.Driver");
             Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/hotel_management", "root", "1234");
 
-            String query = "DELETE FROM checkinandcheckout WHERE SL_NO = ?";
+            String query = "DELETE FROM admins WHERE id = ?";
             PreparedStatement ps = con.prepareStatement(query);
 
             ps.setInt(1, id);
@@ -38,9 +38,9 @@ public class AdminDeleteServlet extends HttpServlet {
                 pw.println("<h2>Record deletion failed</h2>");
             }
 
-            pw.println("<a href='shop.html'>Home</a>");
+            pw.println("<a href='newhome.html'>Home</a>");
             pw.println("<br>");
-            pw.println("<a href='user'>Book List</a>"); // Redirect back to list
+            pw.println("<a href='ownerdashboard.jsp'>Book List</a>"); // Redirect back to list
 
             con.close();
         } catch (SQLException | ClassNotFoundException e) {

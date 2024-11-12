@@ -61,9 +61,9 @@ public class UserEditServlet extends HttpServlet {
                 pw.println("<h2>Record was not Edited Successfully</h2>");
             }
 
-            pw.println("<a href='user'>Home</a>");
+            pw.println("<a href='adminDashboard.jsp'>Admin Dashboard</a>");
             pw.println("<br>");
-            pw.println("<a href='booklist'>Book List</a>");
+            pw.println("<a href='newhome.html'>Home</a>");
 
             con.close();
         } catch (SQLException | ClassNotFoundException e) {

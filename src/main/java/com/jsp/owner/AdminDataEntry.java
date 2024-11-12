@@ -49,8 +49,8 @@ public class AdminDataEntry extends HttpServlet {
             }
 
             // Redirect back to the signup page
-            RequestDispatcher rd = req.getRequestDispatcher("/signup.html");
-            rd.include(req, resp);
+//            RequestDispatcher rd = req.getRequestDispatcher("/.html");
+//            rd.include(req, resp);
 
         } catch (Exception e) {
             e.printStackTrace();

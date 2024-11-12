@@ -39,9 +39,9 @@ public class UserDeleteServlet extends HttpServlet {
                 pw.println("<h2>Record deletion failed</h2>");
             }
 
-            pw.println("<a href='shop.html'>Home</a>");
+            pw.println("<a href='adminDashboard.jsp'>Admin Dashboard</a>");
             pw.println("<br>");
-            pw.println("<a href='user'>Book List</a>"); // Redirect back to list
+            pw.println("<a href='newhome.html'>Home</a>"); // Redirect back to list
 
             con.close();
         } catch (SQLException | ClassNotFoundException e) {
