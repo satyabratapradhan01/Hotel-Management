@@ -141,26 +141,3 @@ WebContent/
 
 ---
 
-## Future Enhancements
-
-- **Payment Integration**: Add payment gateway integration for room bookings.
-- **Email Notifications**: Send booking confirmation emails to customers.
-- **Advanced Search**: Implement advanced search and filtering for bookings.
-- **Responsive Design**: Improve the UI for mobile devices.
-
----
-
-## Contributors
-
-- [Your Name]
-- [Team Members, if any]
-
----
-
-## License
-
-This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
-
----
-
-For any queries, please contact [Your Email Address].
